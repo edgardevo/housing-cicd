@@ -17,7 +17,7 @@ SELECT
         archived,
         created_at,
         default_branch,
-        description,
+        ${ macro_convert_null_to_na.macro_convert_null_to_na("description")} as description,
         fork,
         forks_count,
         full_name,
