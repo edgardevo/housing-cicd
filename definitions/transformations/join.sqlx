@@ -10,7 +10,6 @@ SELECT
         author_date,
         author_name,
         committer_date,
-        committer_email,
         committer_name,
         message,
         repository_id,
