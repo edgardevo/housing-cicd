@@ -1,0 +1,11 @@
+config {
+    type: "table",
+    schema: "eudestgithub",
+    name: "joined_data",
+    tags: ["monthly", "hours"]
+}
+
+SELECT * EXCEPT(author_email)
+FROM ${ref("eudestgithub", "commit")} as com
+LEFT JOIN ${ref("eudestgithub", "repository")} as repo ON com.repository_id = repo.id
+LEFT JOIN  ${ref("eudestgithub", "branch_commit_relation")} as branch ON branch.commit_sha = com.sha
