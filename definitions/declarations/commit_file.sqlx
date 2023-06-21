@@ -3,6 +3,5 @@ config {
   type: "declaration",
   database: "housing-cicd",
   schema: "eudestgithub",
-  name: "commit_file
-"
+  name: "comit_files"
 }
