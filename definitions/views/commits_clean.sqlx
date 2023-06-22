@@ -1,5 +1,8 @@
 config {
-    type: "view"
+    type: "view",
+    database: "housing-cicd",
+    schema: "eudestgithub",
+    name: "commits_clean",
 }
 --- SQL Statement
 
