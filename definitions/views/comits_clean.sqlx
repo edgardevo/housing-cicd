@@ -1,0 +1,8 @@
+config:{
+    type: "view"
+}
+--- SQL Statement
+
+
+SELECT sha, author_date, author_name, committer_date, committer_name, message, repository_id
+FROM ${ref ("eudestgithub","commits")}
