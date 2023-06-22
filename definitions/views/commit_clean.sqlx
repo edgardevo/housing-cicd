@@ -1,9 +1,0 @@
-config {
-    type:"view",
-    database: "housing-cicd",
-    schema:"eudestgithub",
-    name:"commit_clean",
-}
-
-SELECT sha, author_date, author_name, committer_date, committer_name, message, repository_id
- from ${ref ("eudestgithub","commit")}
