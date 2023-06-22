@@ -1,5 +1,6 @@
 
 config {
+<<<<<<< HEAD
   type: "view", // Creates a view in BigQuery. Try changing to "table" instead.
   columns: {
     test: "A description for the test column", // Column descriptions are pushed to BigQuery.
@@ -9,3 +10,12 @@ config {
 -- The rest of a SQLX file contains your SELECT statement used to create the table.
 
 SELECT 1 as test
+=======
+    type:"view",
+    columns:{
+        test: "test desc"
+    }
+}
+
+SELECT 1 AS TEST, "this is test" as test_of_string
+>>>>>>> refs/heads/master

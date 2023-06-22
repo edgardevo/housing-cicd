@@ -3,6 +3,7 @@ config {
     database: "housing-cicd",
     schema: "eudestgithub",
     name: "joined_data",
+<<<<<<< HEAD
     tags: [
         "weekly", "hour", "github"
     ],
@@ -50,3 +51,32 @@ SELECT
 FROM ${ref("eudestgithub", "commits_clean")} as com
 LEFT JOIN ${ref("eudestgithub", "repository")} as repo ON repo.id = com.repository_id
 LEFT JOIN ${ref("eudestgithub", "branch_commit_relation")} as branch ON branch.commit_sha = com.sha
+=======
+}
+
+SELECT sha,
+        author_date,
+        author_name,
+        committer_date,
+        committer_name,
+        message,
+        repository_id,
+        id,
+        archived,
+        created_at,
+        default_branch,
+        description,
+        fork,
+        forks_count,
+        full_name,
+        homepage,
+        language,
+        name,
+        owner_id,
+        private,
+        watchers_count,
+        branch_name
+FROM ${ref("eudestgithub","commit_clean")} as com
+LEFT JOIN ${ref("eudestgithub","repository")} as repo ON repo.id = com.repository_id
+LEFT JOIN ${ref("eudestgithub","branch_commit_relation")} as branch ON branch.commit_sha = com.sha
+>>>>>>> refs/heads/master
