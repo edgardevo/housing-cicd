@@ -2,5 +2,5 @@ config {
     type:"declaration",
     database:"housing-cicd",
     schema:"eudestgithub",
-    name:"commits",
+    name:"commit",
 }

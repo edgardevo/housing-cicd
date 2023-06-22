@@ -1,6 +1,6 @@
-config{
+config {
     type:"view"
 }
 
 SELECT sha, author_date, author_name, committer_date, committer_name, message, repository_id
- from ${ref ("eudestgithub","commits")}
+ from ${ref ("eudestgithub","commit")}

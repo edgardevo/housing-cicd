@@ -1,6 +1,9 @@
-config{
-    type:"view"
-    columns:{}
+
+config {
+    type:"view",
+    columns:{
+        test: "test desc"
+    }
 }
 
 SELECT 1 AS TEST, "this is test" as test_of_string
