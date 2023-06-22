@@ -3,13 +3,29 @@ config {
     database: "housing-cicd",
     schema: "eudestgithub",
     name: "joined_data",
+    tags: [
+        "weekly", "hour", "github"
+    ],
+    assertions: {    
+        nonNull : ["author_name", "description"]
+    }
 
 }
+
+
+
+js { function sha_256(field) {
+    return `
+    SHA256(${field}) as ${field}
+    `;
+}
+}
+
 
 SELECT 
         sha
         author_date,
-        author_name,
+        ${sha_256("author_name")},
         committer_date,
         committer_name,
         message,
@@ -18,14 +34,15 @@ SELECT
         archived,
         created_at,
         default_branch,
-        -- ${includes.macro_convert_nulls_to_na(ref(description))} as `description``,
-        description,
+        COALESCE(description, "NA") as description,        
+        ${macro_convert_nulls_to_na.macro_convert_nulls_to_na("description")} as description_clean,
         fork,
         forks_count,
         full_name,
         homepage,
         language,
-        name,
+        name as unhashed_name,
+        ${sha_256("name")},
         owner_id,
         private,
         watchers_count,
